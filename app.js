@@ -370,7 +370,7 @@ InstaProxy.processGQL = function (request, response) {
 InstaProxy.processLegacy = function (request, response) {
   let callback = function (body) {
     let json = JSON.parse(body);
-    this.fetchFromInstagramGQL({ id: json.user.id }, request, response);
+    this.fetchFromInstagramGQL({ id: json.graphql.user.id }, request, response);
   };
   this.fetchFromInstagram(
     '/' + request.params.username + '/',
